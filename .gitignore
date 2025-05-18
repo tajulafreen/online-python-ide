@@ -1,0 +1,25 @@
+# Ignore Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore frontend node_modules
+/frontend/node_modules/
+frontend/build/
+
+# Ignore backend node_modules (if any)
+/backend/node_modules/
+backend/__pycache__/
+backend/env
+
+# Ignore env files
+*.env
+
+# Ignore Docker files output
+*.log
+*.pid
+*.db
+*.sqlite3
+
