@@ -23,7 +23,7 @@ function App() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/run",
+        "https://online-python-ide.onrender.com/run",
         { code, input: inputText } // send input too
       );
       setOutput(res.data.output);
