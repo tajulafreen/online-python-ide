@@ -1,20 +1,21 @@
-// src/CodeEditor.js
 import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { python } from "@codemirror/lang-python";
 import { oneDark } from "@codemirror/theme-one-dark";
+import { EditorView } from "@codemirror/view";
 
-const CodeEditor = ({ code, setCode }) => {
-  console.log("📥 Code in Editor:", code);
+const CodeEditor = ({ code, setCode, theme }) => {
   return (
     <CodeMirror
       value={code}
       height="400px"
       extensions={[python()]}
-      theme={oneDark}
-      onChange={(val) => {
-        console.log("✏️ Edited Code:", val);
-        setCode(val);
+      theme={theme === "dark" ? oneDark : EditorView.theme({}, { dark: false })}
+      onChange={(val) => setCode(val)}
+      basicSetup={{
+        lineNumbers: true,
+        highlightActiveLine: true,
+        indentOnInput: true,
       }}
     />
   );
